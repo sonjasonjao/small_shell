@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sojala <sojala@student.hive.fi>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/04 18:12:03 by sojala            #+#    #+#             */
-/*   Updated: 2025/05/06 11:00:16 by sojala           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "minishell.h"
 
 static void	handle_exp_and_quotes(t_data *parser, int status)
@@ -111,10 +99,8 @@ static void	start_minishell(char ***my_envp)
 int	main(int ac, char **av, char **envp)
 {
 	char	**my_envp;
-	int		status;
 
 	(void)av;
-	status = 0;
 	if (ac != 1)
 	{
 		print_error("expected format: <./minishell>\n", NULL, NULL);
