@@ -6,6 +6,7 @@
 # include <fcntl.h>
 # include <signal.h>
 # include <stdbool.h>
+# include <stdio.h>
 # include <readline/readline.h>
 # include <readline/history.h>
 # include <sys/wait.h>

@@ -1,6 +1,8 @@
 NAME = small_shell
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
+CPPFLAGS ?=
+LDFLAGS ?=
 LIBFTDIR = ./libft
 LIBFT = $(LIBFTDIR)/libft.a
 
@@ -42,10 +44,10 @@ $(LIBFT):
 	@make all -C $(LIBFTDIR)
 
 $(NAME): $(LIBFT) $(OBJ)
-	$(CC) $(OBJ) $(LIBFT) -o $(NAME) -lreadline
+	$(CC) $(OBJ) $(LIBFT) $(LDFLAGS) -o $(NAME) -lreadline
 
 %.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) -I$(LIBFTDIR) -o $@ -c $<
+	$(CC) $(CFLAGS) $(CPPFLAGS) -I$(LIBFTDIR) -o $@ -c $<
 
 clean:
 	@rm -rf $(OBJ)
